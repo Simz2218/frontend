@@ -4,7 +4,7 @@ import { useNavigate } from "react-router-dom";
 import Swal from "sweetalert2";
 
 const AuthContext = createContext();
-const BASE_URL = "http://127.0.0.1:8000/schools/";
+const BASE_URL = "zvikoro.onrender.com/schools/";
 
 export const URLS = {
   // Auth

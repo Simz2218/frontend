@@ -25,7 +25,7 @@ const useAxios = () => {
 
     try {
       const response = await axios.post(
-        "http://127.0.0.1:8000/schools/token/refresh/",
+        "zvikoro.onrender.com//schools/token/refresh/",
         {
           refresh: authTokens.refresh,
         }
