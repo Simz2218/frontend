@@ -3,7 +3,7 @@ import dayjs from "dayjs";
 import { useContext, useState, useRef } from "react";
 import AuthContext from "../context/AuthContext";
 
-const baseURL = "zvikoro.onrender.com/schools/";
+const baseURL = "https://zvikoro.onrender.com/schools/";
 
 const useAxios = () => {
   const { authTokens, setUser, setAuthTokens } = useContext(AuthContext);
@@ -25,7 +25,7 @@ const useAxios = () => {
 
     try {
       const response = await axios.post(
-        "zvikoro.onrender.com//schools/token/refresh/",
+        "https://zvikoro.onrender.com/schools/token/refresh/",
         {
           refresh: authTokens.refresh,
         }

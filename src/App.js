@@ -2,7 +2,7 @@ import React, { useContext } from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import PrivateRoute from "./utils/PrivateRoute";
 import { AuthProvider } from "./context/AuthContext";
-import 'react-data-grid/lib/styles.css';
+import DataGrid from 'react-data-grid';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 // Layout
