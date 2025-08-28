@@ -5,6 +5,7 @@ import backgroundImage from "./pictures/Lover of the World.jpg";
 import "bootstrap/dist/css/bootstrap.min.css";
 import Swal from "sweetalert2";
 import bluesky from "../views/pictures/bluesky.png";
+import { color } from "framer-motion";
 
 function LoginPage() {
   const { loginUser } = useContext(AuthContext);
@@ -118,10 +119,35 @@ function LoginPage() {
                 Register Now
               </Link>
             </div>
+            
           </div>
         </div>
+        
       </div>
+      <footer
+  style={{
+    background: '#333',
+    color: '#fff',
+    textAlign: 'center',
+    padding: '10px',
+    marginTop: 'auto' // optional, helps push footer down if using flex layout
+  }}
+  className="bg-light text-center text-lg-start"
+>
+  <div
+    className="text-center p-3"
+    style={{ backgroundColor: 'rgba(0, 0, 0, 0.2)' }}
+  >
+    © 2025 - till date Copyright :
+    <a className="text-dark" href="https://mdbootstrap.com/">
+      SoftSimz +263783237453
+    </a>
+  </div>
+</footer>
+
+      
     </div>
+    
   );
 }
 
