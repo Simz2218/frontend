@@ -12,7 +12,7 @@ import Navbar from "./views/Navbar";
 import Homepage from "./views/Homepage";
 import LoginPage from "./views/LoginPage";
 import Profilepage from "./views/Profilepage";
-import Paymentspage from "./views/Paymentspage";
+
 import HRpage from "./views/HRpage";
 import EmployeePage from "./views/EmployeePage";
 import PryPaymentsPage from "./views/PryPaymentsPage";
@@ -46,6 +46,8 @@ function AppRoutes() {
   return (
     <Routes>
       {/* Public */}
+      <Route path="/" element={<Homepage />} />
+
       <Route path="/homepage" element={<Homepage />} />
       <Route path="/login" element={<LoginPage />} />
       <Route path="/register" element={<RegisterPage />} />
@@ -54,7 +56,7 @@ function AppRoutes() {
       {/* Authenticated */}
       <Route element={<PrivateRoute />}>
         <Route path="/dashboard" element={<Profilepage />} />
-        <Route path="/profile/edit" element={<Profilepage />} />
+        
 
         {canSeeSchools && (
           <Route path="/schools" element={<HRpage />} />
@@ -66,10 +68,10 @@ function AppRoutes() {
 
         {canSeePayments && (
           <>
-            <Route path="/payments" element={<Paymentspage />} />
+            
             <Route path="/payments/primary" element={<PryPaymentsPage />} />
-            <Route path="/payments/secondary" element={<SecPaymentsPage />} />
-            <Route path="/payments/secondary-table" element={<PaymentsTable />} />
+            
+            
           </>
         )}
 

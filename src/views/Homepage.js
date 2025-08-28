@@ -174,10 +174,36 @@ function Homepage() {
                 <p key={i}>• {duty}</p>
               ))}
             </div>
+            
           </div>
+          
+          
         ))}
+        
       </div>
+      <footer style= {{
+              position:'fixed',
+              bottom:'0',
+              left:'0',
+              width:'100%',
+              background:'#333',
+              color:'#fff',
+              textAlign:'center',
+              padding:'10px'}}
+      
+              className="bg-light text-center text-lg-start">
+                <div
+                  className="text-center p-3"
+                  style={{ backgroundColor: "rgba(0, 0, 0, 0.2)" }}
+                >
+                  © 2025 - till date Copyright  :
+                  <a className="text-dark" href="https://mdbootstrap.com/">
+                        SoftSimz +263783237453
+                  </a>
+                </div>
+              </footer>
     </div>
+    
   );
 }
 

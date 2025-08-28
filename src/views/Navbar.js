@@ -60,7 +60,9 @@ const Navbar = ({ districtName = "ZAKA DISTRICT" }) => {
           <div className="text-light small mt-1">
             Ministry of Primary and Secondary Education
           </div>
+          
         </div>
+       
       </nav>
 
       {/* Sidebar */}
@@ -152,39 +154,21 @@ const Navbar = ({ districtName = "ZAKA DISTRICT" }) => {
                 </li>
               )}
 
-              {canSeeEmployees && (
-                <li className="nav-item">
-                  <Link to="/employees" className={`nav-link text-primary ${isActive("/employees")}`} onClick={closeMenu}>
-                    Employees
-                  </Link>
-                </li>
-              )}
+              
 
               {canSeePayments && (
                 <>
-                  <li className="nav-item">
-                    <Link to="/payments" className={`nav-link text-primary ${isActive("/payments")}`} onClick={closeMenu}>
-                      Payments Hub
-                    </Link>
-                  </li>
+              
                   <li className="nav-item mt-3">
                     <strong className="text-secondary px-2">Payments</strong>
                   </li>
                   <li className="nav-item">
                     <Link to="/payments/primary" className={`nav-link text-primary ${isActive("/payments/primary")}`} onClick={closeMenu}>
-                      Primary Schools
+                      Schools Payments
                     </Link>
                   </li>
-                  <li className="nav-item">
-                    <Link to="/payments/secondary" className={`nav-link text-primary ${isActive("/payments/secondary")}`} onClick={closeMenu}>
-                      Secondary Schools
-                    </Link>
-                  </li>
-                  <li className="nav-item">
-                    <Link to="/payments/secondary-table" className={`nav-link text-primary ${isActive("/payments/secondary-table")}`} onClick={closeMenu}>
-                      Sec. Payments Table
-                    </Link>
-                  </li>
+                  
+                  
                 </>
               )}
 
@@ -198,11 +182,7 @@ const Navbar = ({ districtName = "ZAKA DISTRICT" }) => {
                       Admin Dashboard
                     </Link>
                   </li>
-                  <li className="nav-item">
-                    <Link to="/admin-creation-table" className={`nav-link text-primary ${isActive("/admin-creation-table")}`} onClick={closeMenu}>
-                      Admin Creation Table
-                    </Link>
-                  </li>
+                  
                   <li className="nav-item">
                     <Link to="/admin-create" className={`nav-link text-primary ${isActive("/admin-create")}`} onClick={closeMenu}>
                       Create Admin
@@ -211,11 +191,8 @@ const Navbar = ({ districtName = "ZAKA DISTRICT" }) => {
                 </>
               )}
 
-              <li className="nav-item">
-                <Link to="/profile/edit" className={`nav-link text-primary ${isActive("/profile/edit")}`} onClick={closeMenu}>
-                  Edit My Profile
-                </Link>
-              </li>
+              
+              
 
               <li className="nav-item mt-4">
                 <button
@@ -233,6 +210,27 @@ const Navbar = ({ districtName = "ZAKA DISTRICT" }) => {
           )}
         </ul>
       </div>
+      <footer style= {{
+              position:'fixed',
+              bottom:'0',
+              left:'0',
+              width:'100%',
+              background:'#333',
+              color:'#fff',
+              textAlign:'center',
+              padding:'10px'}}
+      
+              className="bg-light text-center text-lg-start">
+                <div
+                  className="text-center p-3"
+                  style={{ backgroundColor: "rgba(0, 0, 0, 0.2)" }}
+                >
+                  © 2025 - till date Copyright  :
+                  <a className="text-dark" href="https://mdbootstrap.com/">
+                        SoftSimz +263783237453
+                  </a>
+                </div>
+              </footer>
 
       {/* Overlay */}
       {menuOpen && (
@@ -242,8 +240,10 @@ const Navbar = ({ districtName = "ZAKA DISTRICT" }) => {
           onClick={closeMenu}
           aria-label="Close menu overlay"
         />
+        
       )}
     </div>
+    
   );
 };
 
