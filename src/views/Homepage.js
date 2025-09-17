@@ -1,6 +1,7 @@
 import React, { useEffect } from 'react';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
+import 'animate.css';
 import bluesky from "../views/pictures/bluesky.png";
 
 function Homepage() {
@@ -84,6 +85,7 @@ function Homepage() {
 
   return (
     <div
+      className="animated-background homepage-container"
       style={{
         backgroundImage: `linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url(${bluesky})`,
         backgroundSize: 'cover',
@@ -94,43 +96,35 @@ function Homepage() {
         textShadow: '1px 1px 4px rgba(0,0,0,0.8)',
       }}
     >
-      <h1 style={{ fontSize: '2.5rem', textAlign: 'center' }}>
+      <h1 className="animate__animated animate__fadeInDown" style={{ fontSize: '2.5rem', textAlign: 'center' }}>
         Better Schools Program Of Zimbabwe
       </h1>
-      <h2 style={{ fontSize: '1.5rem', textAlign: 'center', marginBottom: '2rem' }}>
+      <h2 className="animate__animated animate__fadeInUp" style={{ fontSize: '1.5rem', textAlign: 'center', marginBottom: '2rem' }}>
         Zaka District, Masvingo Province
       </h2>
 
       <p style={{ lineHeight: '1.6', fontSize: '1rem' }} data-aos="fade-up">
-        Zaka is a district located 86km southeast of Masvingo under Ndanga communal land. It boasts a strong educational foundation with 94 primary schools and 42 secondary schools, many run by churches and the rural district council. Education was declared a basic human right in 1980, leading to expanded infrastructure and the introduction of science and practical subjects. St Anthony’s High School, now 44 years old, is a nationally renowned institution producing distinguished academics and leaders.
+        Zaka is a district located 86km southeast of Masvingo under Ndanga communal land...
       </p>
 
       <div data-aos="fade-up" style={{ textAlign: 'center', maxWidth: '900px', margin: '3rem auto' }}>
-        <h2>Organisational Vision</h2>
-        <p>
-          To be the leading provider of inclusive quality Education for Socio-Economic Transformation by 2030.
-        </p>
+        <h2 data-aos="fade-right">Organisational Vision</h2>
+        <p>To be the leading provider of inclusive quality Education...</p>
 
-        <h2>Organisational Mission</h2>
-        <p>
-          To provide equitable, quality, inclusive, relevant and competence-driven Infant Junior and Secondary Education.
-        </p>
+        <h2 data-aos="fade-left">Organisational Mission</h2>
+        <p>To provide equitable, quality, inclusive, relevant and competence-driven...</p>
 
-        <h2>Core Values</h2>
-        <p>
-          Accountability, Integrity, Transparency, Empathy, Teamwork, and Commitment define the Ministry’s culture and principles.
-        </p>
+        <h2 data-aos="fade-right">Core Values</h2>
+        <p>Accountability, Integrity, Transparency, Empathy, Teamwork, and Commitment...</p>
 
-        <h2>Organisational Objectives</h2>
-        <p>
-          The Ministry aims to provide education for all, improve teaching standards, maintain affordable costs, promote inclusive ECD, strengthen STEM and vocational learning, offer psychological services, coordinate feeding programs, and monitor special needs education.
-        </p>
+        <h2 data-aos="fade-left">Organisational Objectives</h2>
+        <p>The Ministry aims to provide education for all, improve teaching standards...</p>
       </div>
 
       <div style={{ margin: '2rem 0' }} data-aos="zoom-in">
         <iframe
           title="Zaka District Map"
-          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d379455.2118397272!2d30.930000000000003!3d-20.400000000000002!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1931c3e6e4e2c3f3%3A0x8e3f0f3f0f3f0f3f!2sZaka%2C%20Masvingo%20Province%2C%20Zimbabwe!5e0!3m2!1sen!2szw!4v1692870000000"
+          src="https://www.google.com/maps/embed?pb=..."
           width="100%"
           height="400"
           style={{ border: 0 }}
@@ -144,16 +138,24 @@ function Homepage() {
         <h2 style={{ textAlign: 'center', marginBottom: '2rem' }}>District Leadership Profiles</h2>
 
         {profiles.map((profile, index) => (
-          <div key={index} style={{
-            background: 'rgba(0,0,0,0.6)',
-            padding: '1.5rem',
-            borderRadius: '10px',
-            marginBottom: '2rem',
-            maxWidth: '800px',
-            marginLeft: 'auto',
-            marginRight: 'auto',
-            textAlign: 'center'
-          }}>
+          <div
+            key={index}
+            data-aos="fade-up"
+            data-aos-delay={index * 100}
+            data-aos-duration="800"
+            className="profile-card"
+            style={{
+              background: 'rgba(0,0,0,0.6)',
+              padding: '1.5rem',
+              borderRadius: '10px',
+              marginBottom: '2rem',
+              maxWidth: '800px',
+              marginLeft: 'auto',
+              marginRight: 'auto',
+              textAlign: 'center',
+              transition: 'transform 0.3s ease-in-out'
+            }}
+          >
             <div style={{
               width: '100px',
               height: '100px',
@@ -161,7 +163,7 @@ function Homepage() {
               backgroundColor: '#444',
               margin: '0 auto 1rem'
             }}>
-              {/* Replace with <img src={profile.image} /> when ready */}
+              {/* Placeholder for profile image */}
             </div>
             <h3>{profile.name}</h3>
             <h4 style={{ fontStyle: 'italic', marginBottom: '1rem' }}>{profile.title}</h4>
@@ -174,36 +176,28 @@ function Homepage() {
                 <p key={i}>• {duty}</p>
               ))}
             </div>
-            
           </div>
-          
-          
         ))}
-        
       </div>
-      <footer
-  style={{
-    background: '#333',
-    color: '#fff',
-    textAlign: 'center',
-    padding: '10px',
-    marginTop: 'auto' // optional, helps push footer down if using flex layout
-  }}
-  className="bg-light text-center text-lg-start"
->
-  <div
-    className="text-center p-3"
-    style={{ backgroundColor: 'rgba(0, 0, 0, 0.2)' }}
-  >
-    © 2025 - till date Copyright :
-    <a className="text-dark" href="https://mdbootstrap.com/">
-      SoftSimz +263783237453
-    </a>
-  </div>
-</footer>
 
+      <footer
+        style={{
+          background: '#333',
+          color: '#fff',
+          textAlign: 'center',
+          padding: '10px',
+          marginTop: 'auto'
+        }}
+        data-aos="fade-up"
+      >
+        <div style={{ backgroundColor: 'rgba(0, 0, 0, 0.2)' }}>
+          © 2025 - till date Copyright :
+          <a className="text-dark" href="https://mdbootstrap.com/">
+            SoftSimz +263783237453
+          </a>
+        </div>
+      </footer>
     </div>
-    
   );
 }
 
